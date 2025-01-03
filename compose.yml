@@ -1,0 +1,19 @@
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-conf:/etc/mysql/conf.d
+    ports:
+      - '3306:3306'
+    environment:
+      - TZ=Asia/Tokyo
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+      - MYSQL_ROOT_PASSWORD=pass
+
+volumes:
+  mysql-data:
+  mysql-conf:

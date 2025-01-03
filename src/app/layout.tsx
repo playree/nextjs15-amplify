@@ -18,8 +18,10 @@ const RobotoMono = Roboto_Mono({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ja' className={`${NotoSansJp.variable} ${RobotoMono.variable}`} suppressHydrationWarning>
-      <body className={twMerge('font-noto bg-background antialiased')}>
-        <Providers>{children}</Providers>
+      <body className={twMerge('font-noto min-h-screen bg-background antialiased')}>
+        <Providers>
+          <div className='relative flex h-screen flex-col'>{children}</div>
+        </Providers>
       </body>
     </html>
   )
