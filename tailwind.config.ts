@@ -10,9 +10,26 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+      fontFamily: {
+        noto: [
+          'var(--font-noto-sans-jp)',
+          'BlinkMacSystemFont',
+          'Roboto',
+          'Segoe UI',
+          'Helvetica Neue',
+          'HelveticaNeue',
+          '游ゴシック体',
+          'YuGothic',
+          '游ゴシック Medium',
+          'Yu Gothic Medium',
+          '游ゴシック',
+          'Yu Gothic',
+          'Verdana',
+          'メイリオ',
+          'Meiryo',
+          'sans-serif',
+        ],
+        mono: ['var(--font-roboto-mono)'],
       },
     },
   },

@@ -13,6 +13,7 @@
     "studio": "prisma studio"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@nextui-org/react": "2.4.8",
     "@prisma/client": "^6.1.0",
     "framer-motion": "^11.15.0",
@@ -22,8 +23,10 @@
     "path-to-regexp": "^8.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
     "tailwind-merge": "^2.6.0",
-    "tailwind-variants": "^0.3.0"
+    "tailwind-variants": "^0.3.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

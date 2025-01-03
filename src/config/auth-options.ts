@@ -27,10 +27,13 @@ const authOptions: NextAuthOptions = {
       if (account?.provider === OAUTH_TYPE_GOOGLE) {
         if (param.profile) {
           const profile: Profile & { email_verified?: boolean } = param.profile
-
           if (token.sub && profile.email_verified && profile.email) {
             user = await prisma.user.findUnique({ where: { email: profile.email } })
           }
+        }
+      } else {
+        if (token.sub) {
+          user = await prisma.user.findUnique({ where: { id: token.sub } })
         }
       }
 
@@ -48,18 +51,13 @@ const authOptions: NextAuthOptions = {
     async session(param) {
       const { token, session } = param
       if (token.sub) {
-        if (token.oauth) {
-          session.user = undefined
-          return session
-        }
-
         if (session.user) {
           session.user.id = token.sub
           session.user.email = token.email
         }
         console.debug('set session:', JSON.stringify(session.user))
       } else {
-        return undefined as unknown as Session
+        return {} as Session
       }
       return session
     },

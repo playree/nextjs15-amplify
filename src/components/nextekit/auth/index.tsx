@@ -32,6 +32,10 @@ const AuthHandler: FC<{ children: React.ReactNode; authProps: AuthProps }> = ({ 
     return children
   }
 
+  if (status === 'authenticated') {
+    return children
+  }
+
   return (
     <div className='flex h-screen w-screen items-center justify-center'>
       <div className='h-8 w-8 animate-spin rounded-xl bg-blue-600'></div>
