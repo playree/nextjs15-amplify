@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE `User` (
-    `id` VARCHAR(30) NOT NULL,
+    `id` VARCHAR(24) NOT NULL,
     `email` VARCHAR(254) NOT NULL,
     `updatedAt` DATETIME(3) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
