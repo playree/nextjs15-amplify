@@ -3,12 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - 'corepack enable'
-        - 'yarn install'
+        - corepack enable
+        - yarn install
     build:
       commands:
-        - 'yarn generate'
-        - 'yarn build'
+        - echo "NEXTAUTH_URL=$NEXTAUTH_URL" >> .env
+        - echo "NEXTAUTH_SECRET=$NEXTAUTH_SECRET" >> .env
+        - echo "GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID" >> .env
+        - echo "GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET" >> .env
+        - echo "DATABASE_URL=$DATABASE_URL" >> .env
+        - yarn generate
+        - yarn build
   artifacts:
     baseDirectory: .next
     files:
